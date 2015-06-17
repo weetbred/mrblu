@@ -1,0 +1,174 @@
+.hero {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hang-container {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+h1 {
+  position: relative;
+  z-index: 11;
+}
+
+#lets-get-started {
+  color: white;
+  text-align: center;
+  position: relative;
+  bottom: 8em;
+  border: 1px solid white;
+  width: 150px;
+  height: 80px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0);
+  font-weight: 500;
+  -webkit-transition: background 300ms ease-in-out;
+  -moz-transition: background 300ms ease-in-out;
+  -ms-transition: background 300ms ease-in-out;
+  -o-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+  &:hover {
+    background: rgba(255,255,255,0.5);
+  }
+  z-index: 11;
+}
+
+/* Hang */
+@-webkit-keyframes hvr-hang {
+  0% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  50% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+
+@keyframes hvr-hang {
+  0% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  50% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+
+@-webkit-keyframes hvr-hang-sink {
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+
+@keyframes hvr-hang-sink {
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+
+.hvr-hang {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lets-get-started:hover .hvr-hang {
+  -webkit-animation-name: hvr-hang-sink, hvr-hang;
+  animation-name: hvr-hang-sink, hvr-hang;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
+
+.chevron::before {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0;
+  transform: rotate(135deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+
+.services {
+  position: relative;
+  background: url('../images/bg-services-small.png');
+  height: 800px;
+  width: 100%;
+}
+
+.services:before, .services:after {
+    box-sizing: border-box;
+    content: " ";
+    position: absolute;
+    top:0;
+    display: block;
+    width: 50%;
+    height: 100%;
+    border: 30px solid transparent;
+    border-bottom-color: white;
+}
+
+.services:before {
+    left: 0;
+    border-right: 20px solid transparent;
+    border-left: 0;
+}
+
+.services:after {
+    right: 0;
+    border-left: 20px solid transparent;
+    border-right: 0;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .services {
+    background: url('../images/bg-services-small.png');
+  }
+}
+
+.work {
+  background: white;
+  height: 800px;
+  width: 100%;
+}
