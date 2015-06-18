@@ -161,6 +161,22 @@ h1 {
     border-right: 0;
 }
 
+.services .icon-container{
+	@include outer-container;
+	.icon-services {
+		background: blue;
+		min-height: 400px;
+		p {
+			color: white;
+		}
+		@include span-columns(3);
+		&:nth-child(4n+0) { 
+			@include omega();
+		}
+	}
+}
+
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .services {
     background: url('../images/bg-services-small.png');
