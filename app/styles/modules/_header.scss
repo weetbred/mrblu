@@ -1,4 +1,3 @@
-//little nav
 .menu-button {
   display: none;
   float: right;
@@ -35,15 +34,22 @@
     background: #555;
 }
 
-//big nav
+header {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  &.fixed {
+    background: $gray;
+    display: none;
+    position: fixed;
+  }
+}
+
 nav {
-  display: none;
-  position: fixed;
-  background: $gray;
   height: 80px;
   width: 100%;
   text-align: center;
-  z-index: 100;
 }
 
 ul {
