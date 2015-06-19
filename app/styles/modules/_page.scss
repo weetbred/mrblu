@@ -6,6 +6,30 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
+.hero:before, .hero:after {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top:0;
+  display: block;
+  width: 50%;
+  height: 100%;
+  border: 30px solid transparent;
+  border-bottom-color: white;
+}
+
+.hero:before {
+  left: 0;
+  border-right: 20px solid transparent;
+  border-left: 0;
+}
+
+.hero:after {
+  right: 0;
+  border-left: 20px solid transparent;
+  border-right: 0;
+}
+
 .hang-container {
   bottom: 0;
   position: absolute;
@@ -132,59 +156,77 @@ h1 {
 
 .services {
   position: relative;
-  background: url('../images/bg-services-small.png');
+  background: #ffffff;
   height: 800px;
   width: 100%;
 }
 
-.services:before, .services:after {
-    box-sizing: border-box;
-    content: " ";
-    position: absolute;
-    top:0;
-    display: block;
-    width: 50%;
-    height: 100%;
-    border: 30px solid transparent;
-    border-bottom-color: white;
-}
-
-.services:before {
-    left: 0;
-    border-right: 20px solid transparent;
-    border-left: 0;
-}
-
-.services:after {
-    right: 0;
-    border-left: 20px solid transparent;
-    border-right: 0;
-}
-
-.services .icon-container{
-	@include outer-container;
-	.icon-services {
-		background: blue;
-		min-height: 400px;
-		p {
-			color: white;
-		}
-		@include span-columns(3);
-		&:nth-child(4n+0) { 
-			@include omega();
-		}
-	}
-}
-
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .services {
-    background: url('../images/bg-services-small.png');
+.services {
+  .icon-container{
+  	@include outer-container;
+  	.icon-services {
+      background: white;
+      margin: 2rem 0;
+      img {
+        display: block;
+        margin: 2rem auto;
+        width: 100%;
+        max-width: 252.75px;
+      }
+  		p {
+  			color: $gray;
+        max-width: 252.75px;
+        margin: 0 auto;
+        text-align: center;
+  		}
+      &.row-1 {
+        @include span-columns(3);
+        &:nth-child(4n+0) {
+          @include omega();
+        }
+      }
+      &.row-2 {
+        @include span-columns(4);
+        &:nth-child(3n+0) {
+          @include omega();
+        }
+      }
+  	}
   }
 }
 
 .work {
-  background: white;
-  height: 800px;
+  @include clearfix;
+  display: block;
+  background: #f7fdfa;
+  height: auto;
   width: 100%;
+  height: 100%;
+  .project {
+    display: block;
+    float: left;
+    width: 25%;
+    background: blue;
+    min-height: 400px;
+  }
+}
+
+.about {
+  @include clearfix;
+  display: block;
+  background: white;
+  height: auto;
+  width: 100%;
+  height: 100%;
+  .resume {
+    @include outer-container;
+  }
+  .resume-section {
+    @include span-columns(4);
+    background: blue;
+    min-height: 400px;
+    &:nth-child(3n+0) {
+      @include omega();
+    }
+  }
 }

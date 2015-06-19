@@ -14,10 +14,10 @@
 
   //nav
   $(window).scroll(function(){
-    if ($(this).scrollTop() > 200) {
-      $('nav').fadeIn(200);
+    if ($(this).scrollTop() > 300) {
+      $('header.fixed').fadeIn(200);
     } else {
-      $('nav').fadeOut(300);
+      $('header.fixed').fadeOut(300);
     }
   });
 
