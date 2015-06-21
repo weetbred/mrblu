@@ -1,0 +1,40 @@
+body {
+  &.bdy-2 {
+    background: $teal;
+  }
+}
+
+.description {
+  @include outer-container;
+  .desktop-ex {
+    @include span-columns(6);
+    @include shift(3);
+    padding-top: 4em;
+    a {
+      color: white;
+    }
+    p {
+      color: gray;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: .5em;
+      text-align: center;
+    }
+  }
+}
+
+.example {
+  img {
+    width: 100%
+  }
+}
+
+.hero-sub {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+

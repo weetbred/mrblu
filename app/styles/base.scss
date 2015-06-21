@@ -8,6 +8,9 @@ body {
   color: $gray;
   font-family: $lato;
   font-weight: 300;
+  &.bdy-2 {
+    background: $gray;
+  }
 }
 
 

@@ -160,6 +160,9 @@ h1 {
   width: 100%;
   background: darken($teal, 10%);
   padding: 4em 0; 
+  h2 {
+    text-align: center;
+  }
 }
 
 .services {
@@ -273,6 +276,10 @@ h1 {
   padding: 4em 0;
   .resume {
     @include outer-container;
+    ul li a {
+      color: $teal;
+      text-transform: none;
+    }
     h2 {
 		  margin-top: 0;
       text-align: center;
@@ -299,14 +306,12 @@ h1 {
 
 .contact {
   background: $dark-teal;
-  padding: 4em;
-  h2 {
-    text-align: center;
-    margin:0;
-  }
-  p {
-    margin: 0;
-    text-align: center;
-    color: white;
+  padding: 4em 0;
+  .contact-wrap{
+    @include outer-container;
+    .contact-section {
+      @include span-columns(3);
+      @include shift(1.5);
+    } 
   }
 }
