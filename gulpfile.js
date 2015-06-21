@@ -2,11 +2,17 @@
 // generated on 2015-04-10 using generator-tiy-webapp 0.0.11
 
 // Require your modules
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var rimraf = require('rimraf');
-var exec = require('child_process').exec;
-var prompt = require('gulp-prompt');
+var
+gulp = require('gulp'),
+gutil = require('gulp-util'),
+$ = require('gulp-load-plugins')(),
+rimraf = require('rimraf'),
+exec = require('child_process').exec,
+prompt = require('gulp-prompt'),
+concat = require('gulp-concat'),
+sourcemaps = require('gulp-sourcemaps'),
+uglify = require('gulp-uglify');
+
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -16,14 +22,25 @@ gulp.task('styles', function () {
       precision: 10
     }))
     .pipe($.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('.tmp/styles'));
+    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('dist/styles'));
 });
 
-gulp.task('html', ['styles'], function () {
+gulp.task('js', function() {
+  return gulp.src('app/scripts/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(concat('main.js'))
+      //only uglify if gulp is ran with '--type production'
+      .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/scripts'));
+});
+
+gulp.task('html', ['styles', 'js'], function () {
 
   return gulp.src('app/*.html')
     .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
-    .pipe($.if('*.css', $.csso()))
+    .pipe($.if('styles/*.css', $.csso()))
     .pipe($.useref.restore())
     .pipe($.useref())
     .pipe(gulp.dest('dist'));

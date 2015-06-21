@@ -14,7 +14,7 @@
 }
 
 #scotch-panel {
-    background: #444;;
+    background: #444;
 }
 #scotch-panel ul {
     list-style: none;
@@ -46,10 +46,16 @@ header {
   }
 }
 
+.hvr-underline-from-center:before {
+	background: rgba(255,255,255,0.5);
+	height: 2px;
+}
+
 nav {
   height: 80px;
   width: 100%;
   text-align: center;
+  line-height: 80px;
 }
 
 ul {
@@ -65,7 +71,7 @@ ul {
       color: $white;
       font-size: 0.85rem;
       font-weight: 500;
-      line-height: 80px;
+      line-height: 1.5;
       text-transform: uppercase;
     }
   }
