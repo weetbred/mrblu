@@ -4,6 +4,97 @@
     padding-top: 20px;
   }
   .menu-button {
+    position: relative;
     display: block;
+    z-index: 10000;
+    padding: 1.5em;
+  }
+  h1 {
+    padding:24rem 0 0;
+  }
+  .services .icon-services {
+    margin: 1rem 0;
+    p {
+      font-size: 1rem;
+    }
+  }
+  .work {
+    @include clearfix;
+    display: block;
+    background: #f7fdfa;
+    height: auto;
+    width: 100%;
+    height: 100%;
+    .project {
+      display: block;
+      float: left;
+      width: 33.333%;
+      span.overlay {
+        padding-top: 3rem;
+      }
+    }
+  }
+  .about {
+    padding: 4em 0;
+    .resume {
+      @include outer-container;
+      .resume-section {
+        @include span-columns(12);
+        padding: 0 5rem 2rem;
+        &:nth-child(2n+0) {
+          @include omega();
+        }
+        ul {
+          @include span-columns(6);
+          margin: 0;
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  h1 {
+    padding: 12rem 0 0;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+  }
+  .services {
+    @include outer-container;
+    .icon-services {
+      margin: 1rem 0;
+      &.row-1, &.row-2 {
+        @include span-columns(6);
+        &:nth-child(2n+1) {
+          @include omega();
+        }
+        img {
+          width: 80%;
+        }
+      }
+      &.row-1.first {
+        @include span-columns(12);
+        img {
+          width: 45%;
+        }
+      }
+    }
+  }
+  .about {
+    @include clearfix;
+    display: block;
+    background: white;
+    height: auto;
+    width: 100%;
+    height: 100%;
+    padding: 2em 1rem;
+    .resume {
+      @include outer-container;
+      .resume-section {
+        @include span-columns(12);
+      }
+    }
   }
 }
