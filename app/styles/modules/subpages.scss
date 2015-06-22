@@ -1,6 +1,6 @@
 body {
   &.bdy-2 {
-    background: $teal;
+    background: white;
   }
 }
 
@@ -9,6 +9,10 @@ body {
   .desktop-ex {
     @include span-columns(6);
     @include shift(3);
+    img.logo {
+      width: 75%;
+      text-align: center;
+    }
     padding-top: 4em;
     a {
       color: white;
@@ -23,9 +27,26 @@ body {
   }
 }
 
+.work-sub {
+  @include outer-container;
+  .project {
+    @include span-columns(6);
+    &:nth-child(2n+0) {
+        @include omega();
+    }
+     &:nth-child(2n+0) {
+        @include omega();
+    }
+    img {
+      width: 100%;
+      padding-bottom: 4em;
+    }
+  }
+}
+
 .example {
   img {
-    width: 100%
+    width: 100%;    
   }
 }
 
