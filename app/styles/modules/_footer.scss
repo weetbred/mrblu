@@ -1,9 +1,12 @@
 footer {
   @include clearfix;
   background: $gray;
-  height: 100px;
-  padding: 20px;
+  height: 50px;
+  padding: 0 20px;
   p {
     color: white;
+    padding: 0;
+    margin: 0;
+    line-height: 50px;
   }
 }
