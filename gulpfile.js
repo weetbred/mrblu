@@ -11,8 +11,17 @@ exec = require('child_process').exec,
 prompt = require('gulp-prompt'),
 concat = require('gulp-concat'),
 sourcemaps = require('gulp-sourcemaps'),
+fileinclude = require('gulp-file-include'),
 uglify = require('gulp-uglify');
 
+gulp.task('fileinclude', function() {
+  gulp.src(['app/*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./'));
+});
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -39,6 +48,10 @@ gulp.task('js', function() {
 gulp.task('html', ['styles', 'js'], function () {
 
   return gulp.src('app/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
     .pipe($.if('styles/*.css', $.csso()))
     .pipe($.useref.restore())
@@ -110,7 +123,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('watch', ['connect', 'serve'], function () {
+gulp.task('watch', ['connect', 'serve', 'fileinclude'], function () {
   $.livereload.listen();
 
   // watch for changes

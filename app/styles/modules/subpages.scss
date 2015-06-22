@@ -2,6 +2,10 @@ body {
   &.bdy-2 {
     background: white;
   }
+  
+  &.bdy-3 {
+    background: $teal;
+  }
 }
 
 .description {
@@ -9,6 +13,7 @@ body {
   .desktop-ex {
     @include span-columns(6);
     @include shift(3);
+    padding: 4em 0;
     img.logo {
       width: 75%;
       text-align: center;

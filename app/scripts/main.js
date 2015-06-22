@@ -48,7 +48,7 @@
       $target = $target.length && $target
       || $('[name=' + this.hash.slice(1) +']');
       if ($target.length) {
-        var targetOffset = $target.offset().top;
+        var targetOffset = $target.offset().top -75;
         $('html,body')
         .animate({scrollTop: targetOffset}, 1000);
        return false;
