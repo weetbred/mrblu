@@ -24,6 +24,10 @@ body {
 }
 
 .description {
+  p {
+    text-align: center;
+    font-size: 1.5em;
+  }
   @include outer-container;
   .desktop-ex {
     @include span-columns(6);
@@ -91,6 +95,10 @@ body {
 
 @media only screen and (max-width : 1024px) {
   .description {
+    p {
+      text-align: center;
+      font-size: 1.5em;
+    }
     @include outer-container;
     .desktop-ex {
       @include span-columns(9);
