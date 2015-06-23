@@ -7,7 +7,7 @@
     position: relative;
     display: block;
     z-index: 10000;
-    padding: 1.5em;
+    padding: 1.8em;
   }
   h1 {
     padding:24rem 0 0;
@@ -49,9 +49,12 @@
       }
     }
   }
-  .scotch-panel-wrapper {
-    overflow-x: hidden;
-    overflow-y: visible;
+  .scotch-panel-canvas {
+    -moz-transform: translate3d(0, 0, 0) scale(1, 1, 1);
+    -ms-transform: translate3d(0, 0, 0) scale(1, 1, 1);
+    -o-transform: translate3d(0, 0, 0) scale(1, 1, 1);
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1, 1);
+    transform: translate3d(0, 0, 0) scale(1, 1, 1);
   }
 }
 
