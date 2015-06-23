@@ -83,6 +83,16 @@
       }
     }
   }
+  .work {
+    .project {
+      display: block;
+      float: left;
+      width: 50%;
+      span.overlay p, span.overlay h3 {
+        display: none;
+      }
+    }
+  }
   .about {
     @include clearfix;
     display: block;
