@@ -1,6 +1,8 @@
 (function() {
   "use strict"
 
+  var menuButton = document.getElementById('menuButton');
+
   //panel
   $(window).bind("scroll", function() {
     if ($(this).scrollTop() > 300) {
@@ -19,6 +21,8 @@
     distanceX: '70%',
     enableEscapeKey: true,
   });
+
+
 
   $('#menuButton').click(function(e) {
     e.preventDefault();
