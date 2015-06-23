@@ -35,20 +35,17 @@
     }
   }
   .about {
-    padding: 4em 0;
+    @include clearfix;
+    display: block;
+    background: white;
+    height: auto;
+    width: 100%;
+    height: 100%;
+    padding: 2em 1rem;
     .resume {
       @include outer-container;
       .resume-section {
         @include span-columns(12);
-        padding: 0 5rem 2rem;
-        &:nth-child(2n+0) {
-          @include omega();
-        }
-        ul {
-          @include span-columns(6);
-          margin: 0;
-          padding-right: 1rem;
-        }
       }
     }
   }
@@ -89,12 +86,16 @@
     height: auto;
     width: 100%;
     height: 100%;
-    padding: 2em 1rem;
+    padding: 2em 1rem 4rem;
     .resume {
       @include outer-container;
       .resume-section {
         @include span-columns(12);
+        padding: 0 1rem;
       }
     }
+  }
+  .contact {
+    padding: 3em 0 4em;
   }
 }

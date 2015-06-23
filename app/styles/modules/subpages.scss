@@ -1,10 +1,25 @@
 body {
+  &.bdy-2, &.bdy-3 {
+    .burger-icon {
+      @include burger(25px, 3px, 5px, #fff);
+    }
+    h1 {
+      padding: 10rem 0 0;
+      line-height: 100px;
+    }
+  }
   &.bdy-2 {
     background: white;
+    h1 {
+      color: $gray;
+    }
   }
-  
+
   &.bdy-3 {
     background: $teal;
+    h1 {
+      color: white;
+    }
   }
 }
 
@@ -15,8 +30,12 @@ body {
     @include shift(3);
     padding: 4em 0;
     img.logo {
+      display: block;
       width: 75%;
-      text-align: center;
+      margin: 0 auto;
+    }
+    img.desktop {
+      width: 100%;
     }
     padding-top: 4em;
     a {
@@ -58,7 +77,7 @@ body {
 
 .example {
   img {
-    width: 100%;    
+    width: 100%;
   }
 }
 
@@ -66,8 +85,40 @@ body {
   position: relative;
   width: 100%;
   z-index: 1;
-  height: 50%;
+  height: 80px;
   background: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width : 1024px) {
+  .description {
+    @include outer-container;
+    .desktop-ex {
+      @include span-columns(9);
+      @include shift(1.5);
+      padding: 2em 0;
+      img.logo {
+      }
+    }
+  }
+  .work-sub .project img {
+    padding: 2em 0;
+  }
+}
+
+@media only screen and (max-width : 640px) {
+  body {
+    &.bdy-2, &.bdy-3 {
+      h1 {
+        padding: 3rem 0 0;
+        line-height: 25px;
+
+      }
+      .work-sub .project {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
 }
 
 
