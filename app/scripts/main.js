@@ -1,4 +1,14 @@
-$(function() {
+(function() {
+  "use strict"
+
+  //panel
+  $(window).bind("scroll", function() {
+    if ($(this).scrollTop() > 300) {
+      $('header.fixed').fadeIn(200);
+    } else {
+      $('header.fixed').fadeOut(300);
+    }
+  });
 
   //panel
   var scotchPanel = $('#scotch-panel').scotchPanel({
@@ -33,15 +43,6 @@ $(function() {
     }
   });
 
-  //nav
-  $(window).scroll(function(){
-    if ($(this).scrollTop() > 300) {
-      $('header.fixed').fadeIn(200);
-    } else {
-      $('header.fixed').fadeOut(300);
-    }
-  });
-
   // banner
   var winHeight = $(window).height();
   $('.hero').css({
@@ -68,4 +69,4 @@ $(function() {
       }
     }
   });
-});
+}());
