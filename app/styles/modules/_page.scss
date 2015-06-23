@@ -247,11 +247,13 @@ h1 {
       -moz-transition: all 300ms ease-in-out;
       -o-transition: all 300ms ease-in-out;
       transition: all 300ms ease-in-out;
-      &:nth-child(2n+0) {
-        background: rgba(red,.85);
-      }
       &:hover {
         opacity: 1;
+      }
+    }
+    &:nth-child(even) {
+      span.overlay {
+        background: rgba($dark-teal ,.85);
       }
     }
     &.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {

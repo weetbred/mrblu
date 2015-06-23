@@ -49,6 +49,10 @@
       }
     }
   }
+  .scotch-panel-wrapper {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
 }
 
 @media only screen and (max-width : 600px) {
@@ -76,6 +80,16 @@
         img {
           width: 45%;
         }
+      }
+    }
+  }
+  .work {
+    .project {
+      display: block;
+      float: left;
+      width: 50%;
+      span.overlay p, span.overlay h3 {
+        display: none;
       }
     }
   }
