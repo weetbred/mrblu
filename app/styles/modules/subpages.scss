@@ -24,6 +24,7 @@ body {
 }
 
 .description {
+  position: relative;
   @include outer-container;
   .desktop-ex {
     @include span-columns(6);
@@ -55,6 +56,11 @@ body {
       }
     }
   }
+}
+
+.example {
+  width: 100%;
+  position: relative;
 }
 
 .work-sub {
